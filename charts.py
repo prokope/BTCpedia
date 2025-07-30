@@ -10,4 +10,4 @@ fig.update_layout(
     paper_bgcolor='#e6e6e6'
 )
 fig.show()
-fig.write_html("btc_7_days_chart")
+fig.write_html("btc_7_days_chart.html")
