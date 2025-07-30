@@ -1,15 +1,15 @@
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Assigning API URL to a variable
-url = "https://data-api.coindesk.com/spot/v1/historical/days"
+hours_url = "https://data-api.coindesk.com/spot/v1/historical/hours"
 
 # Defining a dictionary of parameters to be used in the GET method
 params = {
     "market": "binance",
     "instrument": "BTC-USDT",
-    "limit": 7 ,
+    "limit": 168 ,
     "aggregate": 1,
     "fill": "true",
     "apply_mapping": "true",
@@ -18,23 +18,21 @@ params = {
 }
 
 # Making a GET request and storing the response in a variable
-response = requests.get(url, params=params)
+response = requests.get(hours_url, params=params)
 data = response.json()
 
 # Converting the returned JSON data into a Pandas DataFrame
 df = pd.DataFrame(data["Data"])
+df["TIMESTAMP"] = df["TIMESTAMP"].apply(lambda x: datetime.fromtimestamp(x, tz=timezone.utc))
 
-# Viewing every column name
-# print("Columns:")
+""" Viewing every column name
 for _ in range(len(df.columns)):
-    # print(df.columns[_])
-    pass
-
-# print("-" * 25 + "\n")
+    print(df.columns[_])
+print("-" * 25 + "\n")
+"""
 
 # Showing BTC value along last 7 days
-seven_days_ago = datetime.today() - timedelta(days=6)
-date = pd.date_range(start=seven_days_ago.date(), end=datetime.today(), freq='D')
+
 btc_last_7_days_price = df.loc[:, "CLOSE"]
-btc_last_7_days_price.index = date
-# print(f"Last Week BTC Value:\n{btc_last_7_days_price}")
+btc_last_7_days_price.index = df["TIMESTAMP"]
+print(btc_last_7_days_price)
