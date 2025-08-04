@@ -86,3 +86,6 @@ btc_last_month_price = df["CLOSE"]
 df["TIMESTAMP"] = df["TIMESTAMP"].apply(lambda x: datetime.fromtimestamp(x, tz=timezone.utc))
 btc_last_month_price.index = df["TIMESTAMP"]
 print(btc_last_month_price)
+
+# Showing BTC value along last year
+years_url = "https://data-api.coindesk.com/spot/v1/historical/days"
