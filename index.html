@@ -15,11 +15,19 @@
     </div>
 
     <section>
+        <img src="assets/btcpedia_logo.png" alt="BTCpedia Logo" width="270px" height="140px">
         <div class="chart_title">
             <img src="assets/bitcoin_logo.png" alt="BTC Logo">
             <h1>BTC Price</h1>
         </div>
-        <iframe src="btc_7_days_chart.html"></iframe>
+        <iframe src="btc_7_days_chart.html" id="iframe_chart"></iframe>
+
+        <label for="chart_options">Choose an option</label>
+        <select name="chart_options" id="chart_options" onchange="chart_changed()">
+            <option value="btc_7_days_chart">Last 7 Days Chart</option>
+            <option value="btc_last_month_chart">Last Month Chart</option>
+        </select>
     </section>
 </body>
+<script src="script.js"></script>
 </html>
