@@ -33,3 +33,43 @@ function chart_changed()
         }
     }, 350);
 }
+
+fetch("https://newsdata.io/api/1/latest?apikey=pub_b042edecf45a4e6b8f029bdcbc20392c&q=bitcoin&language=en")
+
+.then(response => {
+    if (!response.ok)
+    {
+        console.log("Error while requesting API" + response.status);
+    }
+
+    else
+    {
+        console.log("Data from NewsData API successfully loaded!");
+        return response.json();
+    }
+})
+
+.then(data => {
+    console.log(data.results);
+    var news = data.results;
+    
+    const first_news_title = document.getElementById('first_news_title');
+    first_news_title.textContent = news[0].title;
+
+    const first_news_description = document.getElementById('first_news_description');
+    first_news_description.textContent = news[0].description;
+
+    const second_news_title = document.getElementById('second_news_title');
+    second_news_title.textContent = news[1].title;
+
+    const second_news_description = document.getElementById('second_news_description');
+    second_news_description.textContent = news[1].description;
+
+    const third_news_title = document.getElementById('third_news_title');
+    third_news_title.textContent = news[2].title;
+
+    const third_news_description = document.getElementById('third_news_description');
+    third_news_description.textContent = news[2].description;
+})
+
+
