@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BTCpedia</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+
 </head> 
-<body onload="body_transition()">
+<body>
     <div class="side_menu">
-        <a href="#">Profile</a>
-        <a href="#">BTC</a>
-        <a href="#">Learn</a>
-        <a href="#">About</a>
+        <a href="profile.html"><img src="assets/profile_icon.png" alt=""></a>
+        <a href="#"><img src="assets/btc_section_icon.png" alt="" title="BTC Info and News"></a>
+        <a href="learn.html"><img src="assets/learn_icon.png" alt="" height="40px" width="40px" style="opacity: 0.35;"></a>
+        <a href="#"></a>
     </div>
 
     <main>
         <section>
             <a href="#" id="btcpedia_logo"><img src="assets/btcpedia_logo.png" alt="BTCpedia Logo" width="145px" height="50px"></a>
 
-            <div class="chart_title">
+            <div class="page_title">
                 <img src="assets/bitcoin_logo.png" alt="BTC Logo">
                 <h1>BTC Price</h1>
             </div>
@@ -39,7 +41,7 @@
 
         <section class="news">
             <article>
-                <img src="assets/btcpedia_logo.png" alt="" width="50px" height="50px" id="first_news_img">
+                <img src="assets/btc_image_1.jpg" alt="" width="40%" height="80px" id="first_news_img">
                 <div>
                     <a href="">
                         <h1 id="first_news_title">Notícia Tal</h1>
@@ -49,7 +51,7 @@
             </article>
 
             <article>
-                <img src="assets/btcpedia_logo.png" alt="" width="50px" height="50px">
+                <img src="assets/btc_image_2.jpg" alt="" width="40%" height="80px">
                 <div>
                     <a href="">
                         <h1 id="second_news_title">Notícia Tal</h1>
@@ -57,8 +59,9 @@
                     <p id="second_news_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, recusandae. Saepe ipsum ullam id dolorum?</p>
                 </div>
             </article>
-            <article>
-                <img src="assets/btcpedia_logo.png" alt="" width="50px" height="50px ">
+
+            <article id="last_news">
+                <img src="assets/btc_image_3.jpg" alt="" width="40%" height="80px">
                 <div>
                     <a href="">
                         <h1 id="third_news_title">Notícia Tal</h1>

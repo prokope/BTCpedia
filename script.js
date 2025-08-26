@@ -1,8 +1,3 @@
-function body_transition()
-{
-    document.body.style.opacity = 1;
-}
-
 function chart_changed()
 {
     const menu = document.getElementById('chart_options');
@@ -52,6 +47,19 @@ fetch("https://newsdata.io/api/1/latest?apikey=pub_b042edecf45a4e6b8f029bdcbc203
 .then(data => {
     console.log(data.results);
     var news = data.results;
+
+    for(var i = 0; i < 3; i++)
+    {
+        if ((news[i].description.length) > 175)
+        {
+            news[i].description = news[i].description.substring(0, 175) + "...";
+        }
+
+        if (news[i].title.length > 40)
+        {
+            news[i].title = news[i].title.substring(0, 40) + "...";
+        }
+    }
     
     const first_news_title = document.getElementById('first_news_title');
     first_news_title.textContent = news[0].title;
