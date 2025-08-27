@@ -35,41 +35,55 @@
             </select>
         </section>
         
-        <header>
-            <h1>Relevant News</h1>
+        
+        <header id="header">
+            <h1 id="section_h1">Relevant News</h1>
+
+            <div class="carousel-buttons">
+                <button class="prev" id="active_btn"></button>
+                <button class="next"></button>
+            </div>
         </header>
 
-        <section class="news">
-            <article>
-                <img src="assets/btc_image_1.jpg" alt="" width="40%" height="80px" id="first_news_img">
-                <div>
-                    <a href="">
-                        <h1 id="first_news_title">Notícia Tal</h1>
-                    </a>
-                    <p id="first_news_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, recusandae. Saepe ipsum ullam id dolorum?</p>
-                </div>
-            </article>
-
-            <article>
-                <img src="assets/btc_image_2.jpg" alt="" width="40%" height="80px">
-                <div>
-                    <a href="">
-                        <h1 id="second_news_title">Notícia Tal</h1>
-                    </a>
-                    <p id="second_news_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, recusandae. Saepe ipsum ullam id dolorum?</p>
-                </div>
-            </article>
-
-            <article id="last_news">
-                <img src="assets/btc_image_3.jpg" alt="" width="40%" height="80px">
-                <div>
-                    <a href="">
-                        <h1 id="third_news_title">Notícia Tal</h1>
-                    </a>
-                    <p id="third_news_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, recusandae. Saepe ipsum ullam id dolorum?</p>
-                </div>
-            </article>
-        </section>
+        <div class="carousel-container">
+            <div class="carousel">
+                <section class="news">
+                    <article>
+                        <img src="assets/btc_image_1.jpg" alt="" width="40%" height="80px" id="first_news_img">
+                        <div>
+                            <a href="">
+                                <h1 id="first_news_title">Notícia Tal</h1>
+                            </a>
+                            <p id="first_news_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, recusandae. Saepe ipsum ullam id dolorum?</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="assets/btc_image_2.jpg" alt="" width="40%" height="80px">
+                        <div>
+                            <a href="">
+                                <h1 id="second_news_title">Notícia Tal</h1>
+                            </a>
+                            <p id="second_news_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, recusandae. Saepe ipsum ullam id dolorum?</p>
+                        </div>
+                    </article>
+                    <article id="last_news">
+                        <img src="assets/btc_image_3.jpg" alt="" width="40%" height="80px">
+                        <div>
+                            <a href="">
+                                <h1 id="third_news_title">Notícia Tal</h1>
+                            </a>
+                            <p id="third_news_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, recusandae. Saepe ipsum ullam id dolorum?</p>
+                        </div>
+                    </article>
+                </section>
+                <section class="dashboard">
+                    <!-- Aqui terão gráficos e informações gerais do BTC -->
+                     <h1>Lorem, ipsum dolor.</h1>
+                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis sequi laborum enim recusandae nam!</p>
+                </section>
+            </div>
+        </div>
+        
     </main>
 </body>
 <script src="script.js"></script>

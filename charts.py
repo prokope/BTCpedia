@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
-from request import btc_last_7_days_price, btc_last_2_months_price, btc_last_year_price
+import plotly.express as px
+from request import btc_last_7_days_price, btc_last_2_months_price, btc_last_year_price,total_trades_last_week
 from time import sleep
 
 while True:
@@ -32,4 +33,8 @@ while True:
     btc_last_year_chart.update_traces(line_color="#ff6d4d")
     btc_last_year_chart.show()
     btc_last_year_chart.write_html("btc_Last_year_chart.html")
+
+    last_week_trades_chart = px.bar(total_trades_last_week, x = total_trades_last_week.index.to_list(), y=total_trades_last_week)
+    last_week_trades_chart.show()
+    last_week_trades_chart.write_html("last_week_trades_chart.html")
     sleep(3600)

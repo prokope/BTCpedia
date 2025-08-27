@@ -1,3 +1,57 @@
+const carousel = document.querySelector(".carousel");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const section_h1 = document.getElementById("section_h1");
+
+var active_section = 'News';
+
+if (!carousel) {
+  console.error("Elemento .carousel/#carousel não encontrado");
+}
+
+// Funções para mudar diretamente para cada seção
+function showDashboard() {
+
+    prevBtn.removeAttribute("id");
+    nextBtn.id = 'active_btn';
+
+    if (active_section == 'News')
+    {
+        carousel.style.transform = `translateX(-100%)`; // dashboard é a segunda section
+        section_h1.classList.add('h1_fade_out');
+        setTimeout(() =>
+        {
+            section_h1.classList.remove("h1_fade_out")
+            section_h1.textContent = "Dashboard";
+        }, 450)
+        active_section = 'Dashboard';
+    }
+}
+
+function showNews() {
+
+    nextBtn.removeAttribute("id");
+    prevBtn.id = "active_btn";
+
+    if (active_section == 'Dashboard')
+    {
+        carousel.style.transform = `translateX(0%)`; // news é a primeira section
+        section_h1.classList.add('h1_fade_out');
+
+        setTimeout(() =>
+        {
+            section_h1.classList.remove("h1_fade_out")
+            section_h1.textContent = "Relevant News";
+        }, 450)
+        active_section = 'News';
+    }
+}
+
+// Eventos dos botões
+nextBtn?.addEventListener("click", showDashboard);
+prevBtn?.addEventListener("click", showNews);
+
+
 function chart_changed()
 {
     const menu = document.getElementById('chart_options');
