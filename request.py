@@ -62,11 +62,11 @@ btc_price_weekly_change = ((btc_price_today * 100) / btc_price_seven_days_ago) -
 btc_price_weekly_change = round(btc_price_weekly_change, 2)
 
 data = {
-    'total_trades_last_week': total_trades_last_week,
-    'mean_trades_last_week': mean_trades_last_week,
+    'btc_price_weekly_change': btc_price_weekly_change,
     'btc_price_today': btc_price_today
 }
-with open("dashboard_data.json", "r") as f:
+
+with open("dashboard_data.json", "w") as f:
     json.dump(data, f)
 
 # print(btc_price_weekly_change)

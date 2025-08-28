@@ -55,7 +55,7 @@ prevBtn?.addEventListener("click", showNews);
 function chart_changed()
 {
     const menu = document.getElementById('chart_options');
-    const iframe = document.getElementById('iframe_chart');
+    const iframe = document.querySelector('.iframe_chart');
 
     iframe.classList.add('fade-out');
 
@@ -104,12 +104,12 @@ fetch("https://newsdata.io/api/1/latest?apikey=pub_b042edecf45a4e6b8f029bdcbc203
 
     for(var i = 0; i < 3; i++)
     {
-        if ((news[i].description.length) > 175)
+        if (news[i].description && (news[i].description.length) > 175)
         {
             news[i].description = news[i].description.substring(0, 175) + "...";
         }
 
-        if (news[i].title.length > 40)
+        if (news[i].title && news[i].title.length > 40)
         {
             news[i].title = news[i].title.substring(0, 40) + "...";
         }
@@ -134,4 +134,15 @@ fetch("https://newsdata.io/api/1/latest?apikey=pub_b042edecf45a4e6b8f029bdcbc203
     third_news_description.textContent = news[2].description;
 })
 
+fetch('./dashboard_data.json')
+.then(response => response.json())
+.then(jsonData => 
+{
+    data = jsonData;
 
+    console.log(data);
+    const btc_price = document.getElementById("btc_price");
+    btc_price.textContent = data.btc_price_today + " USD";
+    // Mostrar esses dados na section dashboard
+}
+)

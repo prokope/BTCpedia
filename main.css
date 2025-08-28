@@ -9,8 +9,9 @@ body
 {
     display: flex;
     min-height: 100vh;
+    color: #F0F0F0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #e6e6e6;
+    background-color: #121237;
 }
 
 .side_menu
@@ -18,11 +19,11 @@ body
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #3e66176c;
+    background-image: linear-gradient(to bottom, #1D2651, #463986, #303c9d, #3150B5);
     width: 14%;
     max-width: 100px;
     min-height: 100vh;
-    box-shadow: 2px 1px 6px #a0a0a063;
+
 }
 
 .side_menu > a:first-child
@@ -47,6 +48,12 @@ body
     margin-top: 2%;
 }
 
+#btcpedia_logo > img
+{
+    width: 280px;
+    height: 150px;
+}
+
 main
 {
     width: 100%;
@@ -62,17 +69,23 @@ section
     justify-content: center;
 }
 
-h1
+.news
 {
-    color: #3f6617;
+    display: flex;
+    justify-content: flex-start;
 }
 
-iframe
+h1
 {
-    width: 65%;
+    color: #f0f0f0;
+}
+
+.iframe_chart
+{
+    width: 85%;
     min-height: 300px;
     min-width: 420px;
-    max-width: 760px;
+    max-width: 860px;
     height: 35vh;
     border: none;
     transition: opacity 0.35s ease-in-out;
@@ -88,19 +101,20 @@ iframe.fade-out
 {
     margin-top: 7%;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .page_title > h1
 {
-    margin-left: 20px;
-    font-size: 30px;
+    margin-top: 20px;
+    font-size: 50px;
 }
 
 .page_title > img
 {
-    width: 52px;
-    height: 46px;
+    width: 90px;
+    height: 92px;
 }
 
 header#header
@@ -111,14 +125,14 @@ header#header
 }
 
 .carousel-buttons {
-margin-top: 2%;
-  display: flex;
-  justify-content: center;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 #active_btn
 {
-    background: #2c4711;
+    background: #66408a;
 }
 
 header > h1
@@ -141,13 +155,12 @@ article
 {
     display: flex;
     justify-content: flex-start;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
-    background-color: #d1d1d1;
-    margin-top: 4%;
+    background-color: #1C2544;
+    margin-top: 35px;
     width: 65%;
-    max-width: 550px;
-    max-height: 415px;
+    max-width: 750px;
 }
 
 article > img
@@ -159,16 +172,17 @@ article > img
 
 article > div > a > h1
 {
-    color: #2c2c2c;
+    color: #f0f0f0;
 }
 
 article > p
 {
     text-align: justify;
+    color: #F0F0F0;
 }
 
 article > div {
-    flex: 1; 
+    flex: 1;
 }
 
 article#last_news
@@ -193,12 +207,38 @@ article#last_news
     flex-direction: column;
     align-items: center;
     width: 100%;
-  flex: 0 0 100%; /* cada slide ocupa toda a largura */
-  min-height: 80vh;
+    flex: 0 0 100%; /* cada slide ocupa toda a largura */
+    min-height: 80vh;
 }
 
+.dashboard
+{
+    justify-content: flex-start;
+    margin-top: 35px;
+}
+
+.dashboard > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    background-color: #1C2544;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 750px;
+}
+
+.dashboard > div iframe {
+    width: 100%;
+    max-width: 500px; 
+    height: 35vh;
+}
+
+
 .carousel-buttons button {
-  background: #54792f;
+  background: #3F367D;
   color: #fff;
   border: none;
   width: 15px;
@@ -211,5 +251,12 @@ article#last_news
 }
 
 .carousel-buttons button:hover {
-  background: #2c4711;
+  background: #66408a;
+}
+
+span#btc_price
+{
+    margin-top: 8px;
+    font-size: 25px;
+    color: #e4752b;
 }
