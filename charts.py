@@ -12,7 +12,7 @@ while True:
     btc_last_7_days_chart.update_yaxes(gridcolor='#252b57')
     btc_last_7_days_chart.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='#121236',
+        paper_bgcolor='rgba(0,0,0,0)',
     )
     # btc_last_7_days_chart.show()
     btc_last_7_days_chart.write_html("btc_7_days_chart.html")
@@ -21,7 +21,7 @@ while True:
     btc_last_2_months_chart = go.Figure([go.Scatter(x = btc_last_2_months_price.index.to_list(), y=btc_last_2_months_price)])
     btc_last_2_months_chart.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='#121236'
+        paper_bgcolor='rgba(0,0,0,0)'
     )
     btc_last_2_months_chart.update_traces(line_color="#ff6d4d")
     btc_last_2_months_chart.update_xaxes(gridcolor='#252b57')  # Change x-axis grid color to red
@@ -32,7 +32,7 @@ while True:
     btc_last_year_chart = go.Figure([go.Scatter(x=btc_last_year_price.index.to_list(), y=btc_last_year_price)])
     btc_last_year_chart.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='#121236'
+        paper_bgcolor='rgba(0,0,0,0)'
     )
     btc_last_year_chart.update_traces(line_color="#ff6d4d")
     btc_last_year_chart.update_xaxes(gridcolor='#252b57')  # Change x-axis grid color to red
@@ -45,7 +45,7 @@ while True:
     last_week_trades_chart.update_yaxes(gridcolor='#252b57')
     last_week_trades_chart.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='#1C2544',
+        paper_bgcolor='rgba(0,0,0,0)',
     )
     last_week_trades_chart.show()
     last_week_trades_chart.write_html("last_week_trades_chart.html")

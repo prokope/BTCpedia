@@ -1,21 +1,18 @@
-*
-{
+* {
     border: none;
     margin: 0;
     padding: 0;
 }
 
-body
-{
+body {
     display: flex;
     min-height: 100vh;
     color: #F0F0F0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #121237;
+    background-color: #1C2544;
 }
 
-.side_menu
-{
+.side_menu {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -26,62 +23,54 @@ body
 
 }
 
-.side_menu > a:first-child
-{
-    margin-top: 30px; 
+.side_menu>a:first-child {
+    margin-top: 30px;
 }
 
-.side_menu > a
-{
+.side_menu>a {
     text-decoration: none;
     color: #474747;
     margin-bottom: 30px;
 }
 
-.side_menu > a:last-child
-{
+.side_menu>a:last-child {
     margin-bottom: 0px;
 }
 
-#btcpedia_logo
-{
+#btcpedia_logo {
     margin-top: 2%;
 }
 
-#btcpedia_logo > img
-{
+#btcpedia_logo>img {
     width: 280px;
     height: 150px;
 }
 
-main
-{
+main {
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-image: url(assets/wallpaper.png);
+    background-size: cover;
 }
 
-section
-{
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.news
-{
+.news {
     display: flex;
     justify-content: flex-start;
 }
 
-h1
-{
+h1 {
     color: #f0f0f0;
 }
 
-.iframe_chart
-{
+.iframe_chart {
     width: 85%;
     min-height: 300px;
     min-width: 420px;
@@ -92,33 +81,28 @@ h1
     opacity: 1;
 }
 
-iframe.fade-out
-{
+iframe.fade-out {
     opacity: 0;
 }
 
-.page_title
-{
+.page_title {
     margin-top: 7%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.page_title > h1
-{
+.page_title>h1 {
     margin-top: 20px;
     font-size: 50px;
 }
 
-.page_title > img
-{
+.page_title>img {
     width: 90px;
     height: 92px;
 }
 
-header#header
-{
+header#header {
     margin-top: 5%;
     display: flex;
     justify-content: center;
@@ -130,13 +114,11 @@ header#header
     justify-content: center;
 }
 
-#active_btn
-{
+#active_btn {
     background: #66408a;
 }
 
-header > h1
-{
+header>h1 {
     text-align: center;
     font-size: 28px;
     width: 200px;
@@ -146,13 +128,11 @@ header > h1
 }
 
 
-.h1_fade_out
-{
+.h1_fade_out {
     opacity: 0;
 }
 
-article
-{
+article {
     display: flex;
     justify-content: flex-start;
     padding: 15px;
@@ -163,62 +143,58 @@ article
     max-width: 750px;
 }
 
-article > img
-{
+article>img {
     margin-right: 25px;
     border-radius: 1.5%;
     max-width: 190px;
 }
 
-article > div > a > h1
-{
+article>div>a>h1 {
     color: #f0f0f0;
 }
 
-article > p
-{
+article>p {
     text-align: justify;
     color: #F0F0F0;
 }
 
-article > div {
+article>div {
     flex: 1;
 }
 
-article#last_news
-{
+article#last_news {
     margin-bottom: 5%;
 }
 
 .carousel-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 .carousel {
-  display: flex;
-  width: 100%; /* 2 slides lado a lado */
-  transition: transform 0.6s ease-in-out;
+    display: flex;
+    width: 100%;
+    /* 2 slides lado a lado */
+    transition: transform 0.6s ease-in-out;
 }
 
-.news, .dashboard {
+.news,
+.dashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    flex: 0 0 100%; /* cada slide ocupa toda a largura */
+    flex: 0 0 100%;
     min-height: 80vh;
 }
 
-.dashboard
-{
+.dashboard {
     justify-content: flex-start;
     margin-top: 35px;
 }
 
-.dashboard > div
-{
+.dashboard>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -230,32 +206,31 @@ article#last_news
     max-width: 750px;
 }
 
-.dashboard > div iframe {
+.dashboard>div iframe {
     width: 100%;
-    max-width: 500px; 
+    max-width: 500px;
     height: 35vh;
 }
 
 
 .carousel-buttons button {
-  background: #3F367D;
-  color: #fff;
-  border: none;
-  width: 15px;
-  height: 15px;
-  margin: 0 5px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 100%;
-  transition: background 0.3s;
+    background: #3F367D;
+    color: #fff;
+    border: none;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: background 0.3s;
 }
 
 .carousel-buttons button:hover {
-  background: #66408a;
+    background: #66408a;
 }
 
-span#btc_price
-{
+span#btc_price {
     margin-top: 8px;
     font-size: 25px;
     color: #e4752b;

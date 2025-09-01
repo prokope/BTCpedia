@@ -6,7 +6,7 @@ const section_h1 = document.getElementById("section_h1");
 var active_section = 'News';
 
 if (!carousel) {
-  console.error("Elemento .carousel/#carousel não encontrado");
+    console.error("Elemento .carousel/#carousel não encontrado");
 }
 
 // Funções para mudar diretamente para cada seção
@@ -15,12 +15,10 @@ function showDashboard() {
     prevBtn.removeAttribute("id");
     nextBtn.id = 'active_btn';
 
-    if (active_section == 'News')
-    {
+    if (active_section == 'News') {
         carousel.style.transform = `translateX(-100%)`; // dashboard é a segunda section
         section_h1.classList.add('h1_fade_out');
-        setTimeout(() =>
-        {
+        setTimeout(() => {
             section_h1.classList.remove("h1_fade_out")
             section_h1.textContent = "Dashboard";
         }, 450)
@@ -33,13 +31,11 @@ function showNews() {
     nextBtn.removeAttribute("id");
     prevBtn.id = "active_btn";
 
-    if (active_section == 'Dashboard')
-    {
+    if (active_section == 'Dashboard') {
         carousel.style.transform = `translateX(0%)`; // news é a primeira section
         section_h1.classList.add('h1_fade_out');
 
-        setTimeout(() =>
-        {
+        setTimeout(() => {
             section_h1.classList.remove("h1_fade_out")
             section_h1.textContent = "Relevant News";
         }, 450)
@@ -52,32 +48,26 @@ nextBtn?.addEventListener("click", showDashboard);
 prevBtn?.addEventListener("click", showNews);
 
 
-function chart_changed()
-{
+function chart_changed() {
     const menu = document.getElementById('chart_options');
     const iframe = document.querySelector('.iframe_chart');
 
     iframe.classList.add('fade-out');
 
-    setTimeout (() =>
-    {
-        if (menu.value === "btc_last_2_months_chart")
-        {
+    setTimeout(() => {
+        if (menu.value === "btc_last_2_months_chart") {
             iframe.src = "btc_last_2_months_chart.html";
         }
 
-        else if (menu.value === "btc_7_days_chart")
-        {
+        else if (menu.value === "btc_7_days_chart") {
             iframe.src = "btc_7_days_chart.html";
         }
 
-        else if (menu.value == "btc_last_year_chart")
-        {
+        else if (menu.value == "btc_last_year_chart") {
             iframe.src = "btc_last_year_chart.html";
         }
 
-        iframe.onload = () =>
-        {
+        iframe.onload = () => {
             iframe.classList.remove("fade-out");
         }
     }, 350);
@@ -85,64 +75,67 @@ function chart_changed()
 
 fetch("https://newsdata.io/api/1/latest?apikey=pub_b042edecf45a4e6b8f029bdcbc20392c&q=bitcoin&language=en")
 
-.then(response => {
-    if (!response.ok)
-    {
-        console.log("Error while requesting API" + response.status);
-    }
-
-    else
-    {
-        console.log("Data from NewsData API successfully loaded!");
-        return response.json();
-    }
-})
-
-.then(data => {
-    console.log(data.results);
-    var news = data.results;
-
-    for(var i = 0; i < 3; i++)
-    {
-        if (news[i].description && (news[i].description.length) > 175)
-        {
-            news[i].description = news[i].description.substring(0, 175) + "...";
+    .then(response => {
+        if (!response.ok) {
+            console.log("Error while requesting API" + response.status);
         }
 
-        if (news[i].title && news[i].title.length > 40)
-        {
-            news[i].title = news[i].title.substring(0, 40) + "...";
+        else {
+            console.log("Data from NewsData API successfully loaded!");
+            return response.json();
         }
-    }
-    
-    const first_news_title = document.getElementById('first_news_title');
-    first_news_title.textContent = news[0].title;
+    })
 
-    const first_news_description = document.getElementById('first_news_description');
-    first_news_description.textContent = news[0].description;
+    .then(data => {
+        console.log(data.results);
+        var news = data.results;
 
-    const second_news_title = document.getElementById('second_news_title');
-    second_news_title.textContent = news[1].title;
+        for (var i = 0; i < 3; i++) {
+            if (news[i].description && (news[i].description.length) > 175) {
+                news[i].description = news[i].description.substring(0, 175) + "...";
+            }
 
-    const second_news_description = document.getElementById('second_news_description');
-    second_news_description.textContent = news[1].description;
+            if (news[i].title && news[i].title.length > 40) {
+                news[i].title = news[i].title.substring(0, 40) + "...";
+            }
+        }
 
-    const third_news_title = document.getElementById('third_news_title');
-    third_news_title.textContent = news[2].title;
+        const first_news_title = document.getElementById('first_news_title');
+        first_news_title.textContent = news[0].title;
 
-    const third_news_description = document.getElementById('third_news_description');
-    third_news_description.textContent = news[2].description;
-})
+        const first_news_link = document.getElementById('first_news_link');
+        first_news_link.href = news[0].link;
+
+        const first_news_description = document.getElementById('first_news_description');
+        first_news_description.textContent = news[0].description;
+
+        const second_news_title = document.getElementById('second_news_title');
+        second_news_title.textContent = news[1].title;
+
+        const second_news_link = document.getElementById('second_news_link');
+        second_news_link.href = news[i].link;
+
+        const second_news_description = document.getElementById('second_news_description');
+        second_news_description.textContent = news[1].description;
+
+        const third_news_title = document.getElementById('third_news_title');
+        third_news_title.textContent = news[2].title;
+
+        const third_news_link = document.getElementById('third_news_link');
+        third_news_link.href = news[2].link;
+
+        const third_news_description = document.getElementById('third_news_description');
+        third_news_description.textContent = news[2].description;
+    })
 
 fetch('./dashboard_data.json')
-.then(response => response.json())
-.then(jsonData => 
-{
-    data = jsonData;
+    .then(response => response.json())
+    .then(jsonData => {
+        data = jsonData;
 
-    console.log(data);
-    const btc_price = document.getElementById("btc_price");
-    btc_price.textContent = data.btc_price_today + " USD";
-    // Mostrar esses dados na section dashboard
-}
-)
+        console.log(data);
+        const btc_price = document.getElementById("btc_price");
+        btc_price.textContent = data.btc_price_today + " USD";
+        // Mostrar esses dados na section dashboard
+    }
+    )
